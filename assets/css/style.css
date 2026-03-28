@@ -102,7 +102,7 @@ h1, h2, h3, h4, .logo {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
     text-decoration: none;
 }
@@ -115,21 +115,22 @@ h1, h2, h3, h4, .logo {
     color: var(--white);
 }
 
-.navbar.scrolled .logo span {
+.navbar.scrolled .logo span,
+.navbar.on-light .logo span {
     color: var(--primary-color);
 }
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .nav-links a:hover,
@@ -237,6 +238,19 @@ h1, h2, h3, h4, .logo {
     margin-left: auto;
     margin-right: auto;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.about-hero-page {
+    background-image: url('../../images/about-hero.jpeg') !important;
+    background-position: center 10%;
+    /* Reverting to full-bleed like homepage */
+}
+
+.hero-subtext-white.smaller {
+    font-size: 1.3rem; 
+    max-width: 700px;
+    opacity: 0.95;
+    font-weight: 300;
 }
 
 .btn-large {
@@ -609,6 +623,7 @@ h1, h2, h3, h4, .logo {
 .about-image {
     position: sticky;
     top: 120px;
+    margin-top: 60px;
 }
 
 .about-img-wrapper {
