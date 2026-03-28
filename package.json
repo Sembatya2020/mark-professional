@@ -1,0 +1,12 @@
+{
+  "name": "mark-professional-website",
+  "version": "1.0.0",
+  "description": "Professional website for Mark O'Connell - Process Oriented Psychologist",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "Mark O'Connell",
+  "license": "ISC"
+}

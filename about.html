@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Mark O'Connell</title>
+    <!-- Same head content as index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="main-nav" class="navbar on-light">
+        <div class="container container-nav">
+            <a href="index.html" class="logo">Mark <span>O'Connell</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <section class="bio-hero" style="padding-top: 150px; background-color: var(--off-white);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="about-img-wrapper">
+                        <img src="images/mark.jpeg" alt="Mark O'Connell" style="width: 100%; display: block;">
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <!-- My Journey Section -->
+                    <div class="bio-section reveal">
+                        <h2 class="bio-header">My Journey</h2>
+                        <div class="bio-content">
+                            <p>I've practiced Process Oriented Psychology—developed by Dr. Arnold Mindell and colleagues worldwide—since 1991. My work has evolved over more than three decades, allowing me to develop a deep understanding of human psychology and the interconnected nature of personal and collective experience.</p>
+                            <p>I now primarily work as an adult psychotherapist, teacher, and facilitator. I have also spent years as a child psychotherapist running services in the NHS, work that deeply shaped my understanding of development, resilience, and the healing potential inherent in all human beings.</p>
+                        </div>
+                    </div>
+
+                    <!-- My Work Section -->
+                    <div class="bio-section reveal">
+                        <h2 class="bio-header">My Work</h2>
+                        <div class="bio-content">
+                            <p>From farmers to activists, I meet all paths with heartful presence. My work is informed by wide ranging areas such as nature and ecology, trauma, dreaming, non-duality, attachment, child development, indigenous wisdom, intersectionality, and the <strong>'Social Graces' *</strong>.</p>
+                            <p>I work both online and in person from Devon, meeting clients where they are and tailoring my approach to their unique needs and circumstances.</p>
+                            <button class="btn btn-text" style="padding-left: 0;" onclick="document.getElementById('social-graces-dialog').showModal()">Explain 'Social Graces' &rarr;</button>
+                        </div>
+                    </div>
+
+                    <!-- Apricot Centre Section -->
+                    <div class="bio-section reveal">
+                        <h2 class="bio-header">Apricot Centre</h2>
+                        <div class="bio-content">
+                            <p>I am a Founding Director of the Apricot Centre, which I started with my wife Marina in 2010. The Apricot Centre is dedicated to integrative approaches to psychology, education, and community development.</p>
+                            <p>I work internationally with clients, students, and organisations in Kenya, Uganda, Palestine, Israel, Georgia, Russia, and beyond. This international practice has deepened my appreciation for the universal threads in human experience alongside the vital importance of cultural context.</p>
+                            <a href="https://www.apricotcentre.co.uk/" target="_blank" class="btn-secondary">
+                                Learn more about the Apricot Centre <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- My Approach Section -->
+                    <div class="bio-section reveal">
+                        <h2 class="bio-header">My Approach</h2>
+                        <div class="bio-content">
+                            <p>The spirit of Processwork follows the nature of people, relationships, groups, and world situations to help unfold unique ways we can live. We find creative responses to conflicts, losses, big changes, and personal or collective challenges.</p>
+                            <p>My approach is informed by ecology, field theory, non-duality, subtle energies, Dreambodywork, tantric practice, attachment theory, and trauma-informed practice. I see us as part of nature—not separate from our deepest natures.</p>
+                            <a href="https://www.aamindell.net/" target="_blank" class="btn-secondary">
+                                Learn about Process Oriented Psychology <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Working Together Section -->
+                    <div class="bio-section reveal">
+                        <h2 class="bio-header">Working Together</h2>
+                        <div class="bio-content">
+                            <p>My work flows through verbal dialogue, movement, dreaming, visualisation, sound and music, somatic experience in the body, and subtle body awareness. In Processwork, the Dreambody reveals depths of information and wisdom in many forms.</p>
+                            <p>I offer an initial 15-minute free consultation to explore whether we might work well together. This gives us both a chance to connect and determine if our approach aligns with your needs and goals.</p>
+                            <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book a Free 15-Minute Chat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Mark <span>O'Connell</span></a>
+                <p>Process Oriented Psychologist/Psychotherapist (ProcessworkUK / UKCP)</p>
+            </div>
+            <div class="footer-links">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact</h5>
+                <p>popmocx@gmail.com</p>
+                <p>Devon & Online</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 Mark O'Connell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Social Graces Dialog -->
+    <dialog id="social-graces-dialog" class="dialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h3>The 'Social Graces'</h3>
+                <button class="close-btn" onclick="this.closest('dialog').close()"><i data-lucide="x"></i></button>
+            </div>
+            <div class="dialog-body">
+                <p>Framework for reflecting on identity and power dynamics:</p>
+                <ul class="graces-list">
+                    <li>Gender</li>
+                    <li>Geography</li>
+                    <li>Race</li>
+                    <li>Religion</li>
+                    <li>Age</li>
+                    <li>Ability</li>
+                    <li>Appearance</li>
+                    <li>Culture</li>
+                    <li>Class</li>
+                    <li>Education</li>
+                    <li>Employment</li>
+                    <li>Ethnicity</li>
+                    <li>Spirituality</li>
+                    <li>Sexuality</li>
+                    <li>Sexual</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
