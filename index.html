@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark O'Connell | Process Oriented Psychologist</title>
     <meta name="description" content="Seasoned Process Oriented Psychologist (Psychotherapist) offering therapy, teaching, and facilitation online and in person from Devon.">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
 </head>
 <body>
+    <script>if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');</script>
+    <div class="page-transition"></div>
+
     <!-- Navbar -->
     <nav id="main-nav" class="navbar">
         <div class="container container-nav">
@@ -23,9 +25,14 @@
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i data-lucide="menu"></i>
-            </button>
+            <div class="nav-actions">
+                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -33,14 +40,20 @@
     <header class="section-hero full-screen">
         <div class="hero-overlay"></div>
         <div class="container hero-centered">
-            <div class="hero-content-centered reveal">
-                <h1 class="hero-title-serif">Ready to explore life's twists and turns?</h1>
-                <p class="hero-subtext-white">We live in turbulent times—and there's wisdom in the flow. I am a seasoned Process Oriented Psychologist, working both online and in person from Devon.</p>
-                <div class="hero-cta">
-                    <a href="contact.html" class="btn btn-primary btn-large">Book a Free 15-Minute Chat</a>
+            <div class="hero-content-centered">
+                <h1 class="hero-title-serif typewriter-target">Ready to explore life's twists and turns?</h1>
+                <div class="hero-subtitle-delayed">
+                    <p class="hero-subtext-white">We live in turbulent times—and there's wisdom in the flow. I am a seasoned Process Oriented Psychologist, working both online and in person from Devon.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary btn-large">Book a Free 15-Minute Chat</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <a href="#welcome" class="scroll-indicator" aria-label="Scroll down">
+            <span>Explore</span>
+            <div class="scroll-arrow"></div>
+        </a>
     </header>
 
     <!-- Welcome Section -->
@@ -48,11 +61,34 @@
         <div class="container">
             <div class="welcome-card reveal">
                 <div class="welcome-content">
-                    <p class="welcome-quote">"I've practiced Process Oriented Psychology developed by Dr. Arnold Mindell (aamindell.net) and colleagues worldwide—since 1991."</p>
+                    <p class="welcome-quote">"I've practiced Process Oriented Psychology developed by Dr. Arnold Mindell and colleagues worldwide—since 1991."</p>
                     <p>I now mainly work as an adult psychotherapist, teacher and facilitator, and have also worked for years as a child psychotherapist running services in the NHS. From farmers to activists, I meet all paths with heartful presence.</p>
                 </div>
                 <div class="welcome-icon">
-                    <i data-lucide="heart" style="width: 60px; height: 60px; opacity: 0.1; color: var(--primary-color);"></i>
+                    <i data-lucide="heart" style="width: 60px; height: 60px; opacity: 0.15; color: var(--primary-color);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="33" data-suffix="+">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Years of Practice</div>
+                </div>
+                <div class="stat-item reveal delay-2">
+                    <div class="stat-number" data-target="6" data-suffix="+">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Countries Worldwide</div>
+                </div>
+                <div class="stat-item reveal delay-4">
+                    <div class="stat-number" data-target="3" data-suffix="">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Decades of Dedication</div>
                 </div>
             </div>
         </div>
@@ -61,13 +97,13 @@
     <!-- My Approach Section -->
     <section class="section-approach" id="approach">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header reveal-left">
                 <span class="label">My Approach</span>
                 <h2>Following the Nature of Process</h2>
             </div>
             
             <div class="approach-grid-main">
-                <div class="approach-text reveal">
+                <div class="approach-text reveal-right">
                     <p class="large-p">The spirit of Processwork follows the nature of people, relationships, groups, and world situations to help unfold unique ways we can live. We find creative responses to conflicts, losses, big changes, and personal or collective challenges.</p>
                     <p>Informed by ecology, field theory, non-duality, subtle energies, Dreambodywork, tantric practice, attachment, and trauma, I see us as part of nature—not separate from our deepest natures.</p>
                     
@@ -78,9 +114,22 @@
                 </div>
             </div>
 
-            <div class="social-graces-box reveal">
+            <div class="social-graces-box reveal-scale">
                 <p>My work is informed by wide ranging areas such as nature/ecology, trauma, dreaming, non-duality, attachment, child development, indigenous wisdom, intersectionality and the <strong>'Social Graces' *</strong>.</p>
-                <button class="btn btn-text" onclick="document.getElementById('social-graces-dialog').showModal()">Explain 'Social Graces' &rarr;</button>
+                <button class="btn-social-graces" onclick="document.getElementById('social-graces-dialog').showModal()">
+                    <i data-lucide="info"></i>
+                    What are the 'Social Graces'?
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature Image Break -->
+    <section class="section-nature-break reveal">
+        <div class="nature-image-container">
+            <img src="images/Snapseed.jpeg" alt="Red maple leaf against tree bark — connection with nature" loading="lazy">
+            <div class="nature-overlay">
+                <p class="nature-quote">"I see us as part of nature—not separate from our deepest natures."</p>
             </div>
         </div>
     </section>
@@ -99,33 +148,40 @@
             </div>
 
             <div class="methods-grid">
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-1">
                     <div class="method-icon"><i data-lucide="message-square"></i></div>
                     <h4>Verbal</h4>
+                    <p class="method-desc">Dialogue and conversation as a pathway to understanding</p>
                 </div>
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-2">
                     <div class="method-icon"><i data-lucide="activity"></i></div>
                     <h4>Movement</h4>
+                    <p class="method-desc">Body movement to access deeper awareness and expression</p>
                 </div>
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-3">
                     <div class="method-icon"><i data-lucide="moon"></i></div>
                     <h4>Dreaming</h4>
+                    <p class="method-desc">Working with dream material to uncover hidden wisdom</p>
                 </div>
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-4">
                     <div class="method-icon"><i data-lucide="eye"></i></div>
                     <h4>Visualisation</h4>
+                    <p class="method-desc">Guided imagery to explore inner landscapes</p>
                 </div>
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-5">
                     <div class="method-icon"><i data-lucide="music"></i></div>
                     <h4>Sound & Music</h4>
+                    <p class="method-desc">Using sound to access emotions and states of being</p>
                 </div>
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-6">
                     <div class="method-icon"><i data-lucide="user"></i></div>
                     <h4>Somatic Experience</h4>
+                    <p class="method-desc">Attending to the body's sensations and intelligence</p>
                 </div>
-                <div class="method-item reveal">
+                <div class="method-item reveal delay-6">
                     <div class="method-icon"><i data-lucide="sparkles"></i></div>
                     <h4>Subtle Body</h4>
+                    <p class="method-desc">Working with energy and the felt sense beyond the physical</p>
                 </div>
             </div>
         </div>
@@ -134,7 +190,7 @@
     <!-- Call to Action Section -->
     <section class="section-cta">
         <div class="container">
-            <div class="cta-banner reveal">
+            <div class="cta-banner reveal-scale">
                 <div class="cta-text">
                     <h2>If this resonates, get in touch</h2>
                     <p>I offer an initial 15 minute chat for free to see if we can work together. Yes, let's talk, Devon or online.</p>
@@ -169,7 +225,7 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2024 Mark O'Connell. All rights reserved.</p>
+            <p>&copy; <span class="footer-year">2024</span> Mark O'Connell. All rights reserved.</p>
         </div>
     </footer>
 
@@ -203,9 +259,11 @@
         </div>
     </dialog>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
     <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>

@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Mark O'Connell</title>
-    <!-- Same head content as index.html -->
+    <meta name="description" content="Learn about Mark O'Connell's journey as a Process Oriented Psychologist with over 33 years of experience.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
 </head>
 <body>
+    <script>if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');</script>
+    <div class="page-transition"></div>
+
     <!-- Navbar -->
     <nav id="main-nav" class="navbar">
         <div class="container container-nav">
@@ -21,9 +25,14 @@
                 <a href="about.html" class="active">About</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i data-lucide="menu"></i>
-            </button>
+            <div class="nav-actions">
+                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -42,7 +51,7 @@
     <section class="section-bio-content" style="padding: 100px 0; background-color: var(--off-white);">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image reveal">
+                <div class="about-image reveal-scale">
                     <div class="about-img-wrapper">
                         <img src="images/mark.jpeg" alt="Mark O'Connell" style="width: 100%; display: block;">
                     </div>
@@ -50,7 +59,7 @@
                 
                 <div class="about-content">
                     <!-- My Journey Section -->
-                    <div class="bio-section reveal">
+                    <div class="bio-section reveal-left">
                         <h2 class="bio-header">My Journey</h2>
                         <div class="bio-content">
                             <p>I've practiced Process Oriented Psychology developed by Dr. Arnold Mindell and colleagues worldwide since 1991. My work has evolved over more than three decades, allowing me to develop a deep understanding of human psychology and the interconnected nature of personal and collective experience.</p>
@@ -59,7 +68,7 @@
                     </div>
 
                     <!-- My Work Section -->
-                    <div class="bio-section reveal">
+                    <div class="bio-section reveal-right delay-1">
                         <h2 class="bio-header">My Work</h2>
                         <div class="bio-content">
                             <p>From farmers to activists, I meet all paths with heartful presence. My work is informed by wide ranging areas such as nature and ecology, trauma, dreaming, non-duality, attachment, child development, indigenous wisdom, intersectionality, and the <strong>'Social Graces' *</strong>.</p>
@@ -69,7 +78,7 @@
                     </div>
 
                     <!-- Apricot Centre Section -->
-                    <div class="bio-section reveal">
+                    <div class="bio-section reveal-left delay-2">
                         <h2 class="bio-header">Apricot Centre</h2>
                         <div class="bio-content">
                             <p>I am a Founding Director of the Apricot Centre, which I started with my wife Marina in 2010. The Apricot Centre is dedicated to integrative approaches to psychology, education, and community development.</p>
@@ -81,7 +90,7 @@
                     </div>
 
                     <!-- My Approach Section -->
-                    <div class="bio-section reveal">
+                    <div class="bio-section reveal-right delay-3">
                         <h2 class="bio-header">My Approach</h2>
                         <div class="bio-content">
                             <p>The spirit of Processwork follows the nature of people, relationships, groups, and world situations to help unfold unique ways we can live. We find creative responses to conflicts, losses, big changes, and personal or collective challenges.</p>
@@ -93,7 +102,7 @@
                     </div>
 
                     <!-- Working Together Section -->
-                    <div class="bio-section reveal">
+                    <div class="bio-section reveal delay-4">
                         <h2 class="bio-header">Working Together</h2>
                         <div class="bio-content">
                             <p>My work flows through verbal dialogue, movement, dreaming, visualisation, sound and music, somatic experience in the body, and subtle body awareness. In Processwork, the Dreambody reveals depths of information and wisdom in many forms.</p>
@@ -128,7 +137,7 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2024 Mark O'Connell. All rights reserved.</p>
+            <p>&copy; <span class="footer-year">2024</span> Mark O'Connell. All rights reserved.</p>
         </div>
     </footer>
 
@@ -162,9 +171,11 @@
         </div>
     </dialog>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
     <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>

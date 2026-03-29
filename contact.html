@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Mark O'Connell</title>
-    <!-- Same head content as index.html -->
+    <meta name="description" content="Get in touch with Mark O'Connell for a free 15-minute consultation. Process Oriented Psychology in Devon and online.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
 </head>
 <body>
+    <script>if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');</script>
+    <div class="page-transition"></div>
+
     <!-- Navbar -->
     <nav id="main-nav" class="navbar on-light">
         <div class="container container-nav">
@@ -21,16 +25,21 @@
                 <a href="about.html">About</a>
                 <a href="contact.html" class="active">Contact</a>
             </div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i data-lucide="menu"></i>
-            </button>
+            <div class="nav-actions">
+                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Contact Section -->
     <section class="section-contact">
         <div class="container contact-grid">
-            <div class="contact-info reveal">
+            <div class="contact-info reveal-left">
                 <span class="label">Get In Touch</span>
                 <h1>Yes, let's talk</h1>
                 <p>If this resonates, get in touch—I offer an initial 15 minute chat for free to see if we can work together. Devon or online.</p>
@@ -50,11 +59,26 @@
                 </div>
             </div>
 
-            <div class="contact-form-container reveal">
+            <div class="contact-form-container reveal-right">
                 <div class="contact-form-notice" style="margin-bottom: 2rem; background: var(--secondary-color); padding: 1.5rem; border-radius: 15px;">
                     <p><i data-lucide="info" style="vertical-align: middle; margin-right: 5px;"></i> Free 15-minute consultation available.</p>
                 </div>
-                <form id="contact-form" class="contact-form">
+                <!-- =====================================================
+                     FORMSPREE SETUP INSTRUCTIONS FOR MARK:
+                     1. Go to https://formspree.io and sign up with popmocx@gmail.com
+                     2. Click "New Form", name it "Mark O'Connell Contact"
+                     3. Copy the form ID (looks like: xpwzgkrb)
+                     4. Replace PASTE_FORMSPREE_ID_HERE below with that ID
+                     Example: action="https://formspree.io/f/xpwzgkrb"
+                ===================================================== -->
+                <form id="contact-form" class="contact-form"
+                      action="https://formspree.io/f/PASTE_FORMSPREE_ID_HERE"
+                      method="POST">
+                    <!-- Hidden fields for better email formatting -->
+                    <input type="hidden" name="_subject" value="New enquiry from your website">
+                    <input type="hidden" name="_next" value="thank-you.html">
+                    <input type="text" name="_gotcha" style="display:none">
+
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your Name">
@@ -67,7 +91,7 @@
                         <label for="message">Your Message</label>
                         <textarea id="message" name="message" rows="6" required placeholder="How can I help you?"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Send Message</button>
                 </form>
             </div>
         </div>
@@ -95,13 +119,15 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2024 Mark O'Connell. All rights reserved.</p>
+            <p>&copy; <span class="footer-year">2024</span> Mark O'Connell. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
     <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
