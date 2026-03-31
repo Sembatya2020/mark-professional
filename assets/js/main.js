@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // SCROLL REVEAL (+ staggered variants)
     // ==========================================
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-up');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

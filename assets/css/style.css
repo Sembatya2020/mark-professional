@@ -263,7 +263,8 @@ h1, h2, h3, h4, .logo {
 .about-hero-page {
     background-image: url('../../images/about-hero.jpeg') !important;
     background-position: center 10%;
-    /* Reverting to full-bleed like homepage */
+    /* Override for portrait overlap */
+    overflow: visible !important;
 }
 
 .hero-subtext-white.smaller {

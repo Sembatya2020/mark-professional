@@ -1,0 +1,96 @@
+/* ==========================================
+   RESOURCES / READING LIST STYLES
+   ========================================== */
+
+.section-resources {
+    padding: 100px 0;
+    background-color: var(--off-white);
+}
+
+.resources-grid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resource-category {
+    margin-bottom: 4rem;
+}
+
+.resource-category h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.book-card {
+    background: var(--white);
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.book-card strong {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.book-card em {
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+.resource-quote {
+    font-style: italic;
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    position: relative;
+    line-height: 1.6;
+}
+
+.resource-quote::before {
+    content: "“";
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.1;
+    color: var(--primary-dark);
+}
+
+.citations-list {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    opacity: 0.6;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .book-card {
+    background: var(--white);
+    border-left-color: var(--primary-light);
+}
+
+body.dark-mode .resource-quote {
+    background: rgba(183, 196, 178, 0.1);
+    color: var(--text-dark);
+}
