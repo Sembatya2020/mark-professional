@@ -565,6 +565,11 @@ body.dark-mode .nav-dropdown-content a:hover {
 
 /* Mobile dropdown override */
 @media (max-width: 768px) {
+    .nav-dropdown {
+        display: block;
+        width: 100%;
+    }
+    
     .nav-dropdown-content {
         position: static;
         box-shadow: none;
@@ -575,7 +580,7 @@ body.dark-mode .nav-dropdown-content a:hover {
         transform: none;
     }
     
-    @keyframes fadeIn {
+    @keyframes fadeInMobile {
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
     }
@@ -584,10 +589,65 @@ body.dark-mode .nav-dropdown-content a:hover {
         background-color: rgba(255, 255, 255, 0.03);
     }
     
-    .nav-dropdown:focus-within .nav-dropdown-content,
-    .nav-dropdown:active .nav-dropdown-content,
+    .nav-dropdown.active .nav-dropdown-content, /* JS toggle */
     .nav-dropdown:hover .nav-dropdown-content {
         display: block;
-        animation: fadeIn 0.2s ease-out;
+        animation: fadeInMobile 0.2s ease-out;
+    }
+}
+
+/* ==========================================
+   CONTENT BOX (FOR SUBPAGES)
+   ========================================== */
+.content-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 4rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .content-box {
+    background: var(--card-bg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .content-box {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+/* ==========================================
+   EXTRA MOBILE RESPONSIVENESS (Phones)
+   ========================================== */
+@media (max-width: 576px) {
+    .methods-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem;
+        text-align: center;
+    }
+    .footer-brand .logo,
+    .footer-links h5, 
+    .footer-contact h5 {
+        text-align: center;
+    }
+    .welcome-card {
+        padding: 2rem 1.5rem !important;
+    }
+    .cta-banner {
+        padding: 2rem 1.5rem !important;
+    }
+    .social-graces-box {
+        padding: 2rem 1.5rem !important;
+        border-left-width: 4px;
+    }
+    .approach-card {
+        padding: 2rem 1.5rem !important;
     }
 }

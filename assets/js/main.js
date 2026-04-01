@@ -260,6 +260,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // NAVBAR DROPDOWN FOR MOBILE
+    // ==========================================
+    const dropToggles = document.querySelectorAll('.nav-dropdown > a');
+    dropToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.currentTarget.parentElement.classList.toggle('active');
+        });
+    });
+
+    // ==========================================
     // INITIALIZE LUCIDE ICONS
     // ==========================================
     if (typeof lucide !== 'undefined') lucide.createIcons();
