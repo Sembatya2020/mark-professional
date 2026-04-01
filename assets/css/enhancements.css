@@ -603,12 +603,26 @@ body.dark-mode .nav-dropdown-content a:hover {
    CONTENT BOX (FOR SUBPAGES)
    ========================================== */
 .content-box {
-    max-width: 800px;
+    max-width: 1000px; /* Increased from 800px */
     margin: 0 auto;
     background: var(--white);
-    padding: 4rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
+    padding: 5rem 6rem; /* More generous vertical padding */
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elegant side accent line for the entire box */
+.content-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-light), var(--primary-color));
+    opacity: 0.8;
 }
 
 body.dark-mode .content-box {
@@ -616,9 +630,20 @@ body.dark-mode .content-box {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 1024px) {
+    .content-box {
+        padding: 4rem;
+        max-width: 90%;
+    }
+}
+
 @media (max-width: 768px) {
     .content-box {
-        padding: 2.5rem 1.5rem;
+        padding: 3rem 1.5rem;
+        border-radius: 20px;
+    }
+    .content-box::before {
+        width: 4px;
     }
 }
 
@@ -653,4 +678,54 @@ body.dark-mode .content-box {
     .approach-card {
         padding: 2rem 1.5rem !important;
     }
+}
+
+/* Processwork Specific Enhancements */
+.pw-text-block {
+    position: relative;
+}
+
+.pw-section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--primary-dark);
+    margin: 4rem 0 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.pw-section-header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+.pw-sub-header {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 3rem 0 1.5rem;
+    font-weight: 600;
+}
+
+.pw-paragraph {
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+}
+
+.pw-accent-box {
+    background: var(--off-white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border-left: 5px solid var(--primary-color);
+    margin: 3rem 0;
+}
+
+body.dark-mode .pw-accent-box {
+    background: rgba(255, 255, 255, 0.03);
 }
