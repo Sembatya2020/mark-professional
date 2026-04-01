@@ -24,6 +24,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -32,6 +34,10 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 h1, h2, h3, h4, .logo {
@@ -824,5 +830,21 @@ h1, h2, h3, h4, .logo {
         background: none;
         border: none;
         cursor: pointer;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .footer-brand .logo,
+    .footer-links h5, 
+    .footer-contact h5 {
+        text-align: center;
+    }
+    
+    .methods-grid {
+        grid-template-columns: 1fr;
     }
 }
