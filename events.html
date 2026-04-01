@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Mark O'Connell</title>
-    <meta name="description" content="Get in touch with Mark O'Connell for a free 15-minute consultation. Process Oriented Psychology in Devon and online.">
+    <title>Events | Mark O'Connell</title>
+    <meta name="description" content="Upcoming Events offered by Mark O'Connell.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <div class="page-transition"></div>
 
     <!-- Navbar -->
-    <nav id="main-nav" class="navbar on-light">
+    <nav id="main-nav" class="navbar">
         <div class="container container-nav">
             <a href="index.html" class="logo">Mark <span>O'Connell</span></a>
             <div class="nav-links">
@@ -25,14 +25,14 @@
                 <a href="about.html">About</a>
                 <a href="processwork.html">Processwork</a>
                 <div class="nav-dropdown">
-                    <a href="#" onclick="event.preventDefault()">Offerings <i data-lucide="chevron-down" style="width: 16px; height: 16px; margin-top:-2px;"></i></a>
+                    <a href="#" class="active" onclick="event.preventDefault()">Offerings <i data-lucide="chevron-down" style="width: 16px; height: 16px; margin-top:-2px;"></i></a>
                     <div class="nav-dropdown-content">
                         <a href="services.html">Services</a>
-                        <a href="events.html">Events</a>
+                        <a href="events.html" style="color:var(--primary-color)!important">Events</a>
                     </div>
                 </div>
                 <a href="resources.html">Resources</a>
-                <a href="contact.html" class="active">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
             <div class="nav-actions">
                 <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
@@ -45,55 +45,31 @@
         </div>
     </nav>
 
-    <!-- Contact Section -->
-    <section class="section-contact">
-        <div class="container contact-grid">
-            <div class="contact-info reveal-left">
-                <span class="label">Get In Touch</span>
-                <h1>Yes, let's talk</h1>
-                <p>If this resonates, get in touch—I offer an initial 15 minute chat for free to see if we can work together. Devon or online.</p>
-                
-                <div class="contact-details">
-                    <div class="cnt-item">
-                        <div class="cnt-icon"><i data-lucide="mail"></i></div>
-                        <div>
-                            <h5>Email Directly</h5>
-                            <p><a href="mailto:popmocx@gmail.com" class="text-link">popmocx@gmail.com</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="small-nature-touch">
-                    <img src="images/Lillies image for business card.jpg" alt="Mark O'Connell Business Card" style="width: 450px; max-width: 100%; border-radius: 20px; opacity: 1; margin-top: 2rem; box-shadow: var(--shadow-hover);">
-                </div>
+    <!-- Hero Section -->
+    <header class="section-hero full-screen about-hero-page" style="height: 60vh; min-height: 400px; background-image: url('images/Snapseed.jpeg') !important;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-centered">
+            <div class="hero-content-centered reveal">
+                <h1 class="hero-title-serif">Events</h1>
+                <p class="hero-subtext-white smaller">Upcoming Workshops and Groups</p>
             </div>
+        </div>
+    </header>
 
-            <div class="contact-form-container reveal-right">
-                <div class="contact-form-notice" style="margin-bottom: 2rem; background: var(--secondary-color); padding: 1.5rem; border-radius: 15px;">
-                    <p><i data-lucide="info" style="vertical-align: middle; margin-right: 5px;"></i> Free 15-minute consultation available.</p>
+    <!-- Content Sections -->
+    <section class="section-bio-content" style="padding: 100px 0; background-color: var(--off-white);">
+        <div class="container">
+            <div class="bio-section reveal-up" style="max-width: 800px; margin: 0 auto; background: var(--bg-color); padding: 3rem; border-radius: 20px; box-shadow: var(--shadow-sm);">
+                <h2 class="bio-header" style="text-align: center; margin-bottom: 2rem;">Upcoming Events</h2>
+                <div class="bio-content" style="text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Discover upcoming processwork events, groups, and workshops. Complete details and timings will be listed here.</p>
+                    
+                    <div class="calendar-wrapper" style="border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); border: 2px dashed var(--border-color); background: var(--white); padding: 4rem 2rem;">
+                        <i data-lucide="calendar" style="width: 48px; height: 48px; color: var(--primary-light); margin-bottom: 1rem;"></i>
+                        <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem; color: var(--text-dark);">Schedule Updating Soon</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem;"><em>We are currently gathering the latest event schedule. Please check back shortly, or contact us directly if you have an enquiry.</em></p>
+                    </div>
                 </div>
-                <form id="contact-form" class="contact-form"
-                      action="https://formspree.io/f/xojpekky"
-                      method="POST">
-                    <!-- Hidden fields for better email formatting -->
-                    <input type="hidden" name="_subject" value="New enquiry from your website">
-                    <input type="hidden" name="_next" value="thank-you.html">
-                    <input type="text" name="_gotcha" style="display:none">
-
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="6" required placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
             </div>
         </div>
     </section>

@@ -499,3 +499,95 @@ body.dark-mode .about-img-wrapper { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ==========================================
+   DROPDOWN MENU OVERRIDES
+   ========================================== */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    min-width: 180px;
+    box-shadow: var(--shadow-hover);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    z-index: 1000;
+}
+
+.nav-dropdown-content a {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+    display: block;
+    color: var(--text-dark) !important;
+    font-weight: 500 !important;
+    text-align: center;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.nav-dropdown-content a:hover {
+    background-color: var(--off-white);
+    color: var(--primary-color) !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Dark mode dropdown */
+body.dark-mode .nav-dropdown-content {
+    background-color: var(--card-bg);
+}
+body.dark-mode .nav-dropdown-content a {
+    color: var(--text-dark) !important;
+}
+body.dark-mode .nav-dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile dropdown override */
+@media (max-width: 768px) {
+    .nav-dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.03);
+        display: none;
+        margin-top: 0.5rem;
+        width: 100%;
+        transform: none;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    body.dark-mode .nav-dropdown-content {
+        background-color: rgba(255, 255, 255, 0.03);
+    }
+    
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown:active .nav-dropdown-content,
+    .nav-dropdown:hover .nav-dropdown-content {
+        display: block;
+        animation: fadeIn 0.2s ease-out;
+    }
+}
