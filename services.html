@@ -4,13 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Mark O'Connell</title>
-    <meta name="description" content="Explore Services offered by Mark O'Connell. Book a session or workshop.">
+    <meta name="description" content="Explore psychotherapy, relationship work, workshops, and coaching services offered by Mark O'Connell.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/enhancements.css">
+    <style>
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(124, 140, 116, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .services-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        .pricing-note {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 20px;
+            font-style: italic;
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        .body-image-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 5rem 0;
+        }
+        @media (max-width: 768px) {
+            .body-image-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .floating-image {
+            border-radius: 40px;
+            width: 100%;
+            box-shadow: var(--shadow-hover);
+        }
+    </style>
 </head>
 <body>
     <script>if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');</script>
@@ -46,26 +108,97 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="section-hero full-screen about-hero-page" style="height: 60vh; min-height: 400px; background-image: url('images/Snapseed.jpeg') !important;">
-        <div class="hero-overlay"></div>
-        <div class="container hero-centered">
-            <div class="hero-content-centered reveal">
-                <h1 class="hero-title-serif">Services</h1>
-                <p class="hero-subtext-white smaller">What I Offer</p>
+    <header class="section-hero full-screen about-hero-page" style="height: 80vh; min-height: 600px; background-image: url('images/hero-service.jpeg') !important; background-position: left center; background-size: cover;">
+        <div class="hero-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);"></div>
+        <div class="container" style="height: 100%; display: flex; align-items: center; justify-content: flex-end; max-width: 1500px; padding-right: 3%;">
+            <div class="hero-content-right reveal" style="width: auto; text-align: right; position: relative; z-index: 3; margin-left: auto;">
+                <h1 class="hero-title-serif" style="font-size: 6rem; margin-bottom: 1.5rem; line-height: 1.05; letter-spacing: -1.5px; white-space: nowrap; text-align: right;">Services Offered</h1>
+                <p class="hero-subtext-white" style="font-size: 1.8rem; font-weight: 300; margin-bottom: 0; opacity: 0.9; line-height: 1.4; white-space: nowrap;">
+                    Heartful, creative, and grounded support for change and connection.
+                </p>
             </div>
         </div>
     </header>
 
     <!-- Content Sections -->
-    <section class="section-bio-content" style="padding: 100px 0; background-color: var(--off-white);">
+    <section class="section-padding" style="background-color: var(--off-white);">
         <div class="container">
-            <div class="bio-section reveal-up content-box">
-                <h2 class="bio-header" style="text-align: center; margin-bottom: 2rem;">My Services</h2>
-                <div class="bio-content" style="font-size: 1.1rem; line-height: 1.8;">
-                    <p style="color: var(--primary-color); font-style: italic; text-align: center;">[Content describing the services you offer will be added here...]</p>
-                    <p>Detailed descriptions of private online and in-person sessions, workshops, teaching or other services for adults, communities, or organisations.</p>
-                    <div style="text-align: center;">
-                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book a Free 15-Minute Chat</a>
+            <div class="services-intro reveal-up">
+                <p>I offer psychotherapy, relationship and family work, group facilitation, workshops, retreats, and coaching. My work is heartful, creative, and grounded in a non-pathological approach that values meaning, connection, and change.</p>
+                
+                <div class="pricing-note">
+                    These are some of the services I offer both online and in person. Because I work free or low-cost in areas affected by extreme poverty or conflict, including Palestine, Georgia, Africa, Ukraine, and Russia, I aim to charge my full rate for work in the UK or online unless there are exceptional circumstances.
+                </div>
+            </div>
+
+            <!-- Individual Therapy -->
+            <div class="service-card reveal-up">
+                <div class="service-icon"><i data-lucide="user"></i></div>
+                <h2 class="bio-header">Individual Therapy</h2>
+                <div class="bio-content">
+                    <p>My approach to individual therapy is heartful, direct, and creative. I work with people navigating anxiety, depression, grief, stress, life transitions, identity, and the places where life feels stuck or difficult. I value a non-pathological approach and believe that symptoms, struggles, dreams, and body experiences may carry meaning and point toward deeper gifts, insight, and change. This work can include talking, dreams, body awareness, imagination, movement, and other creative ways of exploring what is happening.</p>
+                </div>
+            </div>
+
+            <!-- Body Section with Image -->
+            <div class="body-image-section">
+                <div class="reveal-left">
+                    <img src="images/mark3.jpeg" alt="Mark O'Connell" class="floating-image">
+                </div>
+                <div class="reveal-right">
+                    <div class="service-icon"><i data-lucide="heart"></i></div>
+                    <h2 class="bio-header">Relationship and Couples Work</h2>
+                    <div class="bio-content">
+                        <p>Relationship and couples work offers a space to explore communication, closeness, difference, conflict, and power dynamics between partners or other important people in your life.</p>
+                        <p>My style is warm, direct, and non-judgemental. I value and respect diverse expressions of relationship, gender, and sexuality, and aim to create a space where people can bring their full selves with honesty and safety. This work can help people understand recurring patterns, speak more openly, and find new ways of relating that support both connection and individuality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parenting -->
+            <div class="service-card reveal-up">
+                <div class="service-icon"><i data-lucide="users"></i></div>
+                <h2 class="bio-header">Parenting, Children and Families</h2>
+                <div class="bio-content">
+                    <p>The parent-child relationship is deeply important, and family life can be both nourishing and challenging. I offer a supportive space for parents, children, and families to explore what is happening with care and without blame. Drawing on my background in NHS services around adoption and children in care, many years working in residential care, and my experience as an adoptive parent, I bring particular understanding to the complexities and joys of family life. I do not currently work with children under 16 years of age.</p>
+                </div>
+            </div>
+
+            <!-- Image with Design -->
+            <div class="body-image-section" style="direction: rtl;">
+                <div class="reveal-right" style="direction: ltr;">
+                    <img src="images/design.jpeg" alt="Abstract Design" class="floating-image">
+                </div>
+                <div class="reveal-left" style="direction: ltr;">
+                    <div class="service-icon"><i data-lucide="tent"></i></div>
+                    <h2 class="bio-header">Groupwork, Workshops and Retreats</h2>
+                    <div class="bio-content">
+                        <p>I offer groupwork, workshops, and retreats for people who want to learn and explore in a shared setting. This can include Processwork, Dreambody work, conflict facilitation, innerwork, and creative approaches to personal and collective change.</p>
+                        <p>Please visit my <a href="events.html" class="text-link">Events page</a> for upcoming groups, workshops, and retreats. If you have a particular organisation or group setting in mind, you are also welcome to contact me to discuss arranging a tailored group or workshop.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coaching -->
+            <div class="service-card reveal-up">
+                <div class="service-icon"><i data-lucide="award"></i></div>
+                <h2 class="bio-header">Coaching and Leadership Development</h2>
+                <div class="bio-content">
+                    <p>I offer coaching and leadership development for people looking to grow in confidence, clarity, and capacity. This work can support leadership at personal, relational, or organisational levels, especially where there is complexity, responsibility, or change. I bring experience as a Founding Director of the Apricot Centre CIC, alongside my wider clinical, facilitation, and community-based work.</p>
+                    <p>My approach combines awareness, reflection, and practical support, and can be useful for people who want to lead with more presence, integrity, and ease.</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="section-cta reveal-up" style="margin-top: 4rem;">
+                <div class="cta-banner">
+                    <div class="cta-text">
+                        <h2>Get in touch</h2>
+                        <p>If you would like to find out more or explore working together, please get in touch.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-white btn-large">Connect with Me</a>
+                        <a href="mailto:popmocx@gmail.com" class="email-link">popmocx@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -108,5 +241,8 @@
     </button>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
