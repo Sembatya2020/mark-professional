@@ -5,102 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Mark O'Connell</title>
     <meta name="description" content="Explore psychotherapy, relationship work, workshops, and coaching services offered by Mark O'Connell.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/enhancements.css">
+
     <style>
         .service-card {
             background: var(--white);
             padding: 3rem;
-            border-radius: 30px;
+            border-radius: 0;
             margin-bottom: 3rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid rgba(124, 140, 116, 0.1);
         }
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
+
         .service-icon {
             width: 60px;
             height: 60px;
             background: var(--secondary-color);
             color: var(--primary-color);
-            border-radius: 15px;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
         }
+
         .services-intro {
             max-width: 800px;
             margin: 0 auto 4rem;
             text-align: center;
         }
+
         .services-intro p {
             font-size: 1.2rem;
             line-height: 1.8;
             color: var(--text-light);
         }
+
         .pricing-note {
             background: var(--secondary-color);
             padding: 2rem;
-            border-radius: 20px;
+            border-radius: 0;
             font-style: italic;
             margin-top: 2rem;
             border-left: 4px solid var(--primary-color);
         }
+
         .body-image-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(280px, 1fr) minmax(450px, 1fr);
             gap: 4rem;
             align-items: center;
             margin: 5rem 0;
         }
-        @media (max-width: 768px) {
+
+        @media (max-width: 900px) {
             .body-image-section {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
+                margin: 3rem 0;
+            }
+            .body-image-section .reveal-right {
+                padding-left: 0;
+                max-width: 100%;
+                text-align: center;
+            }
+            .body-image-section .floating-image {
+                max-width: 480px;
+                margin: 0 auto;
             }
         }
+
+        .body-image-section .reveal-left,
+        .body-image-section .reveal-right {
+            width: 100%;
+        }
+
+        .body-image-section .reveal-right {
+            text-align: left;
+            max-width: 620px;
+            margin-left: 0;
+            padding-left: 1rem;
+        }
+
+        .body-image-section .reveal-left img,
+        .body-image-section .floating-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: var(--shadow-hover);
+        }
+
         .floating-image {
-            border-radius: 40px;
+            border-radius: 0;
             width: 100%;
             box-shadow: var(--shadow-hover);
         }
+
+        .hero-services-custom {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.68) 100%);
+        }
+
+        .hero-services-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-left: clamp(14rem, 30vw, 28rem);
+            padding-right: clamp(4rem, 7vw, 7rem);
+            box-sizing: border-box;
+        }
+
+        .hero-content-right {
+            width: min(100%, 720px);
+            margin: 0;
+            text-align: left;
+        }
+
+        .hero-title-serif {
+            margin: 0 0 1rem 0;
+            white-space: normal;
+            line-height: 1.05;
+            font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-subtext-white {
+            max-width: 540px;
+            line-height: 1.55;
+            font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.92) !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 1200px) {
+            .hero-services-container {
+                padding-left: clamp(4rem, 10vw, 8rem);
+                padding-right: clamp(2rem, 5vw, 4rem);
+            }
+
+            .hero-content-right {
+                width: min(100%, 620px);
+            }
+
+            .hero-title-serif {
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-services-container {
+                justify-content: center;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                text-align: center;
+            }
+
+            .hero-content-right {
+                max-width: 90%;
+                text-align: center;
+            }
+
+            .hero-subtext-white {
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <script>if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');</script>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
     <div class="page-transition"></div>
 
     <!-- Navbar -->
     <nav id="main-nav" class="navbar">
         <div class="container container-nav">
-            <a href="index.html" class="logo">Mark <span>O'Connell</span></a>
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Mark O'Connell Logo" class="logo-img"></a>
+
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="processwork.html">Processwork</a>
+
                 <div class="nav-dropdown">
-                    <a href="#" class="active" onclick="event.preventDefault()">Offerings <i data-lucide="chevron-down" style="width: 16px; height: 16px; margin-top:-2px;"></i></a>
+                    <a href="#" class="active" onclick="event.preventDefault()">
+                        Offerings
+                        <i data-lucide="chevron-down" style="width: 16px; height: 16px; margin-top: -2px;"></i>
+                    </a>
+
                     <div class="nav-dropdown-content">
-                        <a href="services.html" style="color:var(--primary-color)!important">Services</a>
+                        <a href="services.html" style="color: var(--primary-color) !important;">Services</a>
                         <a href="events.html">Events</a>
                     </div>
                 </div>
+
                 <a href="resources.html">Resources</a>
                 <a href="contact.html">Contact</a>
             </div>
+
             <div class="nav-actions">
                 <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
                     <i data-lucide="moon"></i>
                 </button>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
                     <i data-lucide="menu"></i>
                 </button>
             </div>
@@ -108,9 +248,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="section-hero full-screen about-hero-page hero-services-custom" style="height: 80vh; min-height: 600px; background-image: url('images/hero-service.jpeg') !important; background-position: left center; background-size: cover;">
-        <div class="hero-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div class="container hero-services-container">
+    <header
+        class="section-hero full-screen about-hero-page hero-services-custom"
+        style="height: 80vh; min-height: 600px; background-image: url('images/hero-service.jpeg') !important; background-position: left center; background-size: cover;"
+    >
+        <div class="hero-overlay"></div>
+
+        <div class="hero-services-container">
             <div class="hero-content-right reveal">
                 <h1 class="hero-title-serif">Services Offered</h1>
                 <p class="hero-subtext-white">
@@ -124,19 +268,34 @@
     <section class="section-padding" style="background-color: var(--off-white);">
         <div class="container">
             <div class="services-intro reveal-up">
-                <p>I offer psychotherapy, relationship and family work, group facilitation, workshops, retreats, and coaching. My work is heartful, creative, and grounded in a non-pathological approach that values meaning, connection, and change.</p>
-                
+                <p>
+                    I offer psychotherapy, relationship and family work, group facilitation, workshops, retreats, and coaching.
+                    My work is heartful, creative, and grounded in a non-pathological approach that values meaning, connection, and change.
+                </p>
+
                 <div class="pricing-note">
-                    These are some of the services I offer both online and in person. Because I work free or low-cost in areas affected by extreme poverty or conflict, including Palestine, Georgia, Africa, Ukraine, and Russia, I aim to charge my full rate for work in the UK or online unless there are exceptional circumstances.
+                    These are some of the services I offer both online and in person. Because I work free or low-cost in areas affected
+                    by extreme poverty or conflict, including Palestine, Georgia, Africa, Ukraine, and Russia, I aim to charge my full
+                    rate for work in the UK or online unless there are exceptional circumstances.
                 </div>
             </div>
 
             <!-- Individual Therapy -->
             <div class="service-card reveal-up">
-                <div class="service-icon"><i data-lucide="user"></i></div>
+                <div class="service-icon">
+                    <i data-lucide="user"></i>
+                </div>
+
                 <h2 class="bio-header">Individual Therapy</h2>
+
                 <div class="bio-content">
-                    <p>My approach to individual therapy is heartful, direct, and creative. I work with people navigating anxiety, depression, grief, stress, life transitions, identity, and the places where life feels stuck or difficult. I value a non-pathological approach and believe that symptoms, struggles, dreams, and body experiences may carry meaning and point toward deeper gifts, insight, and change. This work can include talking, dreams, body awareness, imagination, movement, and other creative ways of exploring what is happening.</p>
+                    <p>
+                        My approach to individual therapy is heartful, direct, and creative. I work with people navigating anxiety,
+                        depression, grief, stress, life transitions, identity, and the places where life feels stuck or difficult.
+                        I value a non-pathological approach and believe that symptoms, struggles, dreams, and body experiences may
+                        carry meaning and point toward deeper gifts, insight, and change. This work can include talking, dreams,
+                        body awareness, imagination, movement, and other creative ways of exploring what is happening.
+                    </p>
                 </div>
             </div>
 
@@ -145,22 +304,46 @@
                 <div class="reveal-left">
                     <img src="images/mark3.jpeg" alt="Mark O'Connell" class="floating-image">
                 </div>
+
                 <div class="reveal-right">
-                    <div class="service-icon"><i data-lucide="heart"></i></div>
+                    <div class="service-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+
                     <h2 class="bio-header">Relationship and Couples Work</h2>
+
                     <div class="bio-content">
-                        <p>Relationship and couples work offers a space to explore communication, closeness, difference, conflict, and power dynamics between partners or other important people in your life.</p>
-                        <p>My style is warm, direct, and non-judgemental. I value and respect diverse expressions of relationship, gender, and sexuality, and aim to create a space where people can bring their full selves with honesty and safety. This work can help people understand recurring patterns, speak more openly, and find new ways of relating that support both connection and individuality.</p>
+                        <p>
+                            Relationship and couples work offers a space to explore communication, closeness, difference, conflict,
+                            and power dynamics between partners or other important people in your life.
+                        </p>
+
+                        <p>
+                            My style is warm, direct, and non-judgemental. I value and respect diverse expressions of relationship,
+                            gender, and sexuality, and aim to create a space where people can bring their full selves with honesty
+                            and safety. This work can help people understand recurring patterns, speak more openly, and find new ways
+                            of relating that support both connection and individuality.
+                        </p>
                     </div>
                 </div>
             </div>
 
             <!-- Parenting -->
             <div class="service-card reveal-up">
-                <div class="service-icon"><i data-lucide="users"></i></div>
+                <div class="service-icon">
+                    <i data-lucide="users"></i>
+                </div>
+
                 <h2 class="bio-header">Parenting, Children and Families</h2>
+
                 <div class="bio-content">
-                    <p>The parent-child relationship is deeply important, and family life can be both nourishing and challenging. I offer a supportive space for parents, children, and families to explore what is happening with care and without blame. Drawing on my background in NHS services around adoption and children in care, many years working in residential care, and my experience as an adoptive parent, I bring particular understanding to the complexities and joys of family life. I do not currently work with children under 16 years of age.</p>
+                    <p>
+                        The parent-child relationship is deeply important, and family life can be both nourishing and challenging.
+                        I offer a supportive space for parents, children, and families to explore what is happening with care and
+                        without blame. Drawing on my background in NHS services around adoption and children in care, many years
+                        working in residential care, and my experience as an adoptive parent, I bring particular understanding to
+                        the complexities and joys of family life. I do not currently work with children under 16 years of age.
+                    </p>
                 </div>
             </div>
 
@@ -169,23 +352,50 @@
                 <div class="reveal-right" style="direction: ltr;">
                     <img src="images/design.jpeg" alt="Abstract Design" class="floating-image">
                 </div>
+
                 <div class="reveal-left" style="direction: ltr;">
-                    <div class="service-icon"><i data-lucide="tent"></i></div>
+                    <div class="service-icon">
+                        <i data-lucide="tent"></i>
+                    </div>
+
                     <h2 class="bio-header">Groupwork, Workshops and Retreats</h2>
+
                     <div class="bio-content">
-                        <p>I offer groupwork, workshops, and retreats for people who want to learn and explore in a shared setting. This can include Processwork, Dreambody work, conflict facilitation, innerwork, and creative approaches to personal and collective change.</p>
-                        <p>Please visit my <a href="events.html" class="text-link">Events page</a> for upcoming groups, workshops, and retreats. If you have a particular organisation or group setting in mind, you are also welcome to contact me to discuss arranging a tailored group or workshop.</p>
+                        <p>
+                            I offer groupwork, workshops, and retreats for people who want to learn and explore in a shared setting.
+                            This can include Processwork, Dreambody work, conflict facilitation, innerwork, and creative approaches
+                            to personal and collective change.
+                        </p>
+
+                        <p>
+                            Please visit my <a href="events.html" class="text-link">Events page</a> for upcoming groups, workshops,
+                            and retreats. If you have a particular organisation or group setting in mind, you are also welcome to
+                            contact me to discuss arranging a tailored group or workshop.
+                        </p>
                     </div>
                 </div>
             </div>
 
             <!-- Coaching -->
             <div class="service-card reveal-up">
-                <div class="service-icon"><i data-lucide="award"></i></div>
+                <div class="service-icon">
+                    <i data-lucide="award"></i>
+                </div>
+
                 <h2 class="bio-header">Coaching and Leadership Development</h2>
+
                 <div class="bio-content">
-                    <p>I offer coaching and leadership development for people looking to grow in confidence, clarity, and capacity. This work can support leadership at personal, relational, or organisational levels, especially where there is complexity, responsibility, or change. I bring experience as a Founding Director of the Apricot Centre CIC, alongside my wider clinical, facilitation, and community-based work.</p>
-                    <p>My approach combines awareness, reflection, and practical support, and can be useful for people who want to lead with more presence, integrity, and ease.</p>
+                    <p>
+                        I offer coaching and leadership development for people looking to grow in confidence, clarity, and capacity.
+                        This work can support leadership at personal, relational, or organisational levels, especially where there is
+                        complexity, responsibility, or change. I bring experience as a Founding Director of the Apricot Centre CIC,
+                        alongside my wider clinical, facilitation, and community-based work.
+                    </p>
+
+                    <p>
+                        My approach combines awareness, reflection, and practical support, and can be useful for people who want to
+                        lead with more presence, integrity, and ease.
+                    </p>
                 </div>
             </div>
 
@@ -194,8 +404,9 @@
                 <div class="cta-banner">
                     <div class="cta-text">
                         <h2>Get in touch</h2>
-                        <p>If you would like to find out more or explore working together, please get in touch.</p>
+                        <p>All enquiries are welcome. If you would like to discuss working together, I offer an initial 15 minute chat — in person in Devon, or online.</p>
                     </div>
+
                     <div class="cta-actions">
                         <a href="contact.html" class="btn btn-white btn-large">Connect with Me</a>
                         <a href="mailto:popmocx@gmail.com" class="email-link">popmocx@gmail.com</a>
@@ -209,9 +420,10 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="index.html" class="logo">Mark <span>O'Connell</span></a>
+                <a href="index.html" class="logo"><img src="images/logo.png" alt="Mark O'Connell Logo" class="logo-img"></a>
                 <p>Process Oriented Psychologist/Psychotherapist (ProcessworkUK / UKCP)</p>
             </div>
+
             <div class="footer-links">
                 <h5>Navigation</h5>
                 <ul>
@@ -224,14 +436,19 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
+
             <div class="footer-contact">
                 <h5>Contact</h5>
                 <p><a href="mailto:popmocx@gmail.com" class="text-link">popmocx@gmail.com</a></p>
                 <p>Devon & Online</p>
             </div>
         </div>
+
         <div class="container footer-bottom">
-            <p>&copy; <span class="footer-year">2024</span> Mark O'Connell. All rights reserved. | Designed by <a href="mailto:ivansmbt@gmail.com" class="text-link">Ivan Sembatya (ivansmbt@gmail.com)</a></p>
+            <p>
+                &copy; <span class="footer-year">2024</span> Mark O'Connell. All rights reserved. |
+                Designed by <a href="mailto:ivansmbt@gmail.com" class="text-link">Ivan Sembatya (ivansmbt@gmail.com)</a>
+            </p>
         </div>
     </footer>
 

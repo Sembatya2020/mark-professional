@@ -111,6 +111,27 @@ h1, h2, h3, h4, .logo {
     font-size: 1.7rem;
     font-weight: 700;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: clamp(110px, 14vh, 150px);
+    width: auto;
+    max-width: 400px;
+    object-fit: contain;
+    transition: var(--transition);
+    display: block;
+}
+
+.navbar:not(.scrolled):not(.on-light) .logo-img {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
+}
+
+.navbar.scrolled .logo-img,
+.navbar.on-light .logo-img {
+    filter: none;
+    height: clamp(95px, 12vh, 130px);
 }
 
 .logo span {
@@ -191,7 +212,7 @@ h1, h2, h3, h4, .logo {
 /* Hero Section */
 .section-hero.full-screen {
     height: 100vh;
-    min-height: 600px;
+    min-height: 640px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,8 +220,17 @@ h1, h2, h3, h4, .logo {
     background-size: cover;
     background-position: center;
     position: relative;
-    padding-top: 0;
+    /* Push content down so flex-centering accounts for the fixed transparent navbar */
+    padding-top: clamp(80px, 12vh, 140px);
+    padding-bottom: clamp(40px, 6vh, 80px);
     overflow: hidden;
+}
+
+/* Short page heroes (Events / Processwork / Resources use ~60vh) */
+.section-hero.full-screen[style*="60vh"] {
+    min-height: 480px !important;
+    padding-top: clamp(110px, 16vh, 160px);
+    padding-bottom: clamp(30px, 5vh, 60px);
 }
 
 .hero-overlay {
@@ -215,8 +245,13 @@ h1, h2, h3, h4, .logo {
 
 @media (max-width: 768px) {
     .section-hero.full-screen {
-        min-height: 800px; /* Allow content to breathe */
-        padding-top: 100px;
+        min-height: 560px;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    .section-hero.full-screen[style*="60vh"] {
+        min-height: 380px !important;
+        padding-top: 110px;
     }
 }
 
@@ -233,37 +268,39 @@ h1, h2, h3, h4, .logo {
 
 .hero-title-serif {
     font-family: 'Playfair Display', serif;
-    font-size: 4.2rem;
-    font-weight: 700;
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    font-weight: 600;
     color: var(--white);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    line-height: 1.1;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
 }
 
 @media (max-width: 768px) {
     .hero-title-serif {
-        font-size: 2.8rem;
-        margin-bottom: 1.5rem;
+        font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+        margin-bottom: 1.25rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title-serif {
-        font-size: 2.2rem;
+        font-size: clamp(1.6rem, 7vw, 2rem);
     }
 }
 
 .hero-subtext-white {
     font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
     font-weight: 400;
     color: var(--white);
-    margin-bottom: 3rem;
-    max-width: 800px;
+    margin-bottom: 2.5rem;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    line-height: 1.55;
 }
 
 .about-hero-page {
@@ -295,7 +332,7 @@ h1, h2, h3, h4, .logo {
 .welcome-card {
     background-color: #E8F0E5; /* Soft Green */
     padding: 4rem;
-    border-radius: 30px;
+    border-radius: 0;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 3rem;
@@ -393,7 +430,7 @@ h1, h2, h3, h4, .logo {
 .approach-card {
     padding: 3rem 2rem;
     background-color: var(--off-white);
-    border-radius: 20px;
+    border-radius: 0;
     transition: var(--transition);
 }
 
@@ -408,7 +445,7 @@ h1, h2, h3, h4, .logo {
     height: 50px;
     background-color: var(--primary-light);
     color: var(--primary-dark);
-    border-radius: 12px;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -430,7 +467,7 @@ h1, h2, h3, h4, .logo {
     padding: 3rem;
     background-color: var(--secondary-color);
     border-left: 5px solid var(--accent-color);
-    border-radius: 0 20px 20px 0;
+    border-radius: 0;
 }
 
 .social-graces-box p {
@@ -486,7 +523,7 @@ h1, h2, h3, h4, .logo {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 5rem;
-    border-radius: 40px;
+    border-radius: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -539,7 +576,21 @@ h1, h2, h3, h4, .logo {
 .footer-brand .logo {
     color: var(--white);
     margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-brand .logo-img {
+    height: clamp(90px, 9vh, 120px);
+    width: auto;
+    max-width: 280px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+    opacity: 1;
+    transition: var(--transition);
     display: block;
+}
+
+.footer-brand .logo-img:hover {
+    transform: translateY(-2px);
 }
 
 .footer-links h5, .footer-contact h5 {
@@ -580,7 +631,7 @@ h1, h2, h3, h4, .logo {
 .dialog {
     padding: 0;
     border: none;
-    border-radius: 20px;
+    border-radius: 0;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 90%;
@@ -654,7 +705,7 @@ h1, h2, h3, h4, .logo {
 }
 
 .about-img-wrapper {
-    border-radius: 40px;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-hover);
 }
@@ -739,7 +790,7 @@ h1, h2, h3, h4, .logo {
 .contact-form {
     background-color: var(--white);
     padding: 3rem;
-    border-radius: 30px;
+    border-radius: 0;
     box-shadow: var(--shadow);
 }
 
@@ -770,8 +821,8 @@ h1, h2, h3, h4, .logo {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .hero-title-serif { font-size: 3.5rem; }
-    
+    /* Hero title handled by clamp() — leave it alone here */
+
     .hero-grid, .about-grid, .contact-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -798,8 +849,8 @@ h1, h2, h3, h4, .logo {
 }
 
 @media (max-width: 768px) {
-    .hero-title-serif { font-size: 2.8rem; }
-    .hero-subtext-white { font-size: 1.2rem; margin-bottom: 2rem; }
+    /* Hero title + subtext handled by clamp() in the base rule */
+    .hero-subtext-white { margin-bottom: 2rem; }
     .btn-large { padding: 1rem 2.5rem; font-size: 1rem; }
     
     .section-padding { padding: 60px 0; }
