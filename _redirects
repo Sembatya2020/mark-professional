@@ -1,0 +1,9 @@
+# Clean URLs — let visitors use /about instead of /about.html
+/home          /index.html        200
+/about         /about.html        200
+/processwork   /processwork.html  200
+/services      /services.html     200
+/offerings     /services.html     200
+/events        /events.html       200
+/resources     /resources.html    200
+/contact       /contact.html      200
