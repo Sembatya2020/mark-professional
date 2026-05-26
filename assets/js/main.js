@@ -172,25 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // PAGE TRANSITIONS — Intercept internal links
-    // ==========================================
-    document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('#') && !href.startsWith('tel')) {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const t = document.querySelector('.page-transition');
-                if (t) {
-                    t.style.display = 'block';
-                    t.classList.remove('loaded');
-                    t.classList.add('navigating');
-                    setTimeout(() => { window.location.href = href; }, 400);
-                } else {
-                    window.location.href = href;
-                }
-            });
-        }
-    });
+    // PAGE TRANSITIONS — disabled for instant navigation
 
     // ==========================================
     // CONTACT FORM — Formspree Integration
