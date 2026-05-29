@@ -64,6 +64,16 @@
             height: 100%;
             border: 0;
         }
+        .map-link {
+            text-align: center;
+            margin-top: 1.25rem;
+        }
+        .map-link a {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .map-link a:hover { text-decoration: underline; }
         @media (max-width: 768px) {
             .map-embed { aspect-ratio: 4 / 3; }
             .section-map { padding-bottom: 60px; }
@@ -239,12 +249,15 @@
             <p class="map-subtext">In-person sessions are held in Dartington, near Totnes, Devon (TQ9 6JL). I also work in London and online worldwide.</p>
             <div class="map-embed">
                 <iframe
-                    src="https://maps.google.com/maps?q=Mark+O%27Connell+-+Process+Oriented+Psychologist,+Millhouse,+Week,+Dartington,+Totnes+TQ9+6JL&output=embed"
+                    src="https://maps.google.com/maps?q=Mark+O%27Connell+-+Process+Oriented+Psychologist,+Millhouse,+Week,+Dartington,+Totnes+TQ9+6JL&z=15&output=embed"
                     title="Map showing Mark O'Connell's Process Oriented Psychology practice in Dartington, Devon"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     allowfullscreen></iframe>
             </div>
+            <p class="map-link">
+                <a href="https://maps.app.goo.gl/GuRECNM6xedk5ryX9" target="_blank" rel="noopener">Open in Google Maps &amp; get directions <i data-lucide="external-link" style="width:16px;height:16px;vertical-align:-2px;"></i></a>
+            </p>
         </div>
     </section>
 
